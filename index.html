@@ -1,76 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Engineering Portfolio – Your Name</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background: #f5f5f5;
-color: #333;
-}
-header {
-background: #222;
-color: white;
-padding: 2rem;
-text-align: center;
-}
-header h1 {
-margin: 0;
-font-size: 2.5rem;
-}
-header p {
-font-size: 1.2rem;
-margin-top: 0.5rem;
-}
-main {
-padding: 2rem;
-max-width: 1000px;
-margin: auto;
-}
-h2 {
-border-bottom: 2px solid #ccc;
-padding-bottom: 0.5rem;
-margin-top: 2rem;
-}
-.projects {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 1.5rem;
-margin-top: 1rem;
-}
-.card {
-background: white;
-padding: 1rem;
-border-radius: 10px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.card img {
-max-width: 100%;
-border-radius: 8px;
-margin-bottom: 0.8rem;
-}
-.card h3 {
-margin-top: 0;
-margin-bottom: 0.5rem;
-}
-.links a {
-display: inline-block;
-margin-right: 0.5rem;
-color: #0066cc;
-text-decoration: none;
-}
-.links a:hover {
-text-decoration: underline;
-}
-footer {
-text-align: center;
-padding: 2rem;
-font-size: 0.9rem;
-background: #eee;
-margin-top: 2rem;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marko Baran – Mechanical Engineering Portfolio</title>
+  <style>
+    /* General Reset */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background-color:#f4f4f4; color:#333; }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      background-color:#222; padding:0.8rem 2rem; position:sticky; top:0; z-index:100;
+    }
+    .navbar .logo { color:#fff; font-size:1.5rem; font-weight:bold; text-decoration:none; }
+    .navbar ul { list-style:none; display:flex; gap:1rem; align-items:center; }
+    .navbar li { position:relative; }
+    .navbar a { color:#fff; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
+    .navbar a:hover { background-color:#007BFF; }
+    .navbar .home { border:1px solid #fff; }
+    .dropdown-content {
+      display:none; position:absolute; background-color:#333; min-width:180px; top:100%; left:0;
+      border-radius:5px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.2); z-index:10;
+    }
+    .dropdown-content a { display:block; padding:0.5rem 1rem; color:#fff; border-bottom:1px solid #444; }
+    .dropdown-content a:hover { background-color:#007BFF; }
+    .dropdown:hover .dropdown-content { display:block; }
+
+    /* Hero Section */
+    header { background: url('images/hero-image.jpg') no-repeat center center/cover; color:white; text-align:center; padding:6rem 2rem; }
+    header h1 { font-size:3rem; margin-bottom:0.5rem; }
+    header p { font-size:1.2rem; margin-bottom:1rem; }
+
+    /* Main Content */
+    main { padding:3rem 1.5rem; max-width:1000px; margin:auto; }
+    h2 { font-size:2rem; margin-bottom:1rem; border-bottom:2px solid #007BFF; display:inline-block; padding-bottom:0.5rem; }
+
+    /* Project Cards */
+    .projects { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:1rem; }
+    .card { background:white; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); overflow:hidden; transition:transform 0.3s; }
+    .card img { width:100%; height:auto; border-bottom:2px solid #ddd; }
+    .card h3 { font-size:1.5rem; margin:1rem; }
+    .card p { padding:0 1rem 1rem; font-size:1rem; color:#555; }
+    .card:hover { transform:translateY(-5px); }
+
+    /* Footer */
+    footer { text-align:center; padding:2rem; background-color:#222; color:white; }
+    footer a { color:#007BFF; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Marko Baran</a>
+    <ul>
+      <li><a href="index.html" class="home">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Projects ▼</a>
+        <div class="dropdown-content">
+          <a href="project-lightsaber.html">3D Printed Lightsaber</a>
+          <a href="project-motorcycle.html">Motorcycle Repair</a>
+          <a href="project-licenseplate.html">License Plate Holder</a>
+        </div>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Marko Baran</h1>
+    <p>Mechanical Engineering Student | Portfolio</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <img src="images/lightsaber.jpg" alt="3D Printed Lightsaber">
+          <h3>3D Printed Lightsaber</h3>
+          <p>Designed and fabricated a custom lightsaber using 3D printing techniques. Integrated mechanical components to create a durable, functional prop with attention to detail in the design process.</p>
+        </div>
+        <div class="card">
+          <img src="images/motorcycle.jpg" alt="Motorcycle Repair">
+          <h3>Motorcycle Repair</h3>
+          <p>Hands-on project involving disassembly, repair, and reassembly of a motorcycle. Developed strong mechanical troubleshooting and problem-solving skills.</p>
+        </div>
+        <div class="card">
+          <img src="images/licenseplate.jpg" alt="License Plate Holder">
+          <h3>Sheet Metal License Plate Holder</h3>
+          <p>Designed and manufactured a custom license plate holder from sheet metal, showcasing fabrication and design-for-manufacturing skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: marko@example.com</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Marko Baran. All rights reserved.</p>
+  </footer>
+
+</body>
 </html>
